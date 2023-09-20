@@ -1,0 +1,10 @@
+.content-wrapper {
+  background-color: #fffafa;
+  width: 80vw;
+  position: sticky;
+  /* height: 88vh; */
+  margin-top: 91px;
+  float: right;
+  grid-area: 20px;
+  overflow: hidden;
+}
