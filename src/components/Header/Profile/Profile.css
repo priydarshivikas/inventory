@@ -1,0 +1,115 @@
+.profile-container{
+    margin-top: 20px;
+}
+.profile-dropdown {
+    display: inline-block;
+    position: relative;
+    background: hsl(0, 14%, 90%);
+    margin: auto;
+    font-weight: bold;
+    font-size: .9rem;
+    border-radius: 50px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+   /* IE 10+ */
+    user-select: none;
+   /* Likely future */
+}
+.profile-dropdown * {
+    -webkit-user-select: none;
+   /* Chrome all / Safari all */
+    -moz-user-select: none;
+   /* Firefox all */
+    -ms-user-select: none;
+   /* IE 10+ */
+    user-select: none;
+   /* Likely future */
+}
+.userIcon{
+    margin-left: 10px;
+}
+.profile-dropdown input[type="checkbox"] {
+    display: none;
+}
+.profile-dropdown input[type="checkbox"]:checked ~ ul {
+    display: block;
+    animation: pulse 0.5s;
+}
+.profile-dropdown input[type="checkbox"]:checked ~ img {
+    background: orange;
+}
+
+.profile-dropdown input[type="checkbox"]:checked ~ label i {
+    color: #f2f2f2;
+}
+.profile-dropdown img {
+    display: inline-block;
+    background: #d9d9d9;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+    margin: 0.5rem 0.75rem 0.5rem 0.5rem;
+    border-radius: 50%;
+}
+.profile-dropdown span {
+    display: inline-block;
+    vertical-align: sub;
+    width: 80px;
+    margin-right: -1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.profile-dropdown ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    background: #e6dddd;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.profile-dropdown ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #817272;
+    font-size: .9rem;
+}
+.profile-dropdown ul li a i {
+    font-size: .9rem;
+    vertical-align: middle;
+    margin: 0 0.75rem 0 -0.25rem;
+}
+.profile-dropdown ul li a:hover {
+    background: #f1e4e4;
+}
+.profile-dropdown ul li:first-child a:hover {
+    border-radius: 3px 3px 0 0;
+}
+.profile-dropdown ul li:last-child a:hover {
+    border-radius: 0 0 3px 3px;
+}
+.profile-dropdown > label {
+    position: relative;
+    height: 3rem;
+    display: block;
+    text-decoration: none;
+    background: transparent;
+    color: #333;
+    box-sizing: border-box;
+    padding: 12px;
+    float: right;
+    border-radius: 0 3px 3px 0;
+}
+.profile-dropdown:after {
+    content: '';
+    display: table;
+    clear: both;
+}

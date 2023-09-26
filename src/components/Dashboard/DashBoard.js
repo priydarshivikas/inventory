@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./DashBoard.css";
 import SalesIcon from "../img/cost.png";
 import ProfitIcon from "../img/profit.png";
@@ -16,11 +16,11 @@ const Dashboard = () => {
         <div className="sales-overview">
           <div className="heading">
             <h3>Sales Overview</h3>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
             <div className="box">
-              <div className="icon">
+              <div className="icon sales-icon">
                 <img src={SalesIcon} alt="salesicon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -29,7 +29,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="box">
-              <div className="icon">
+              <div className="icon revenue-icon">
                 <img src={RevenueIcon} alt="RevenueIcon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -40,7 +40,7 @@ const Dashboard = () => {
           </div>
           <div className="box-main">
             <div className="box">
-              <div className="icon">
+              <div className="icon sales-icon">
                 <img src={SalesIcon} alt="SalesIcon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -49,7 +49,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="box">
-              <div className="icon">
+              <div className="icon profit-icon">
                 <img src={ProfitIcon} alt="ProfitIcon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -62,11 +62,11 @@ const Dashboard = () => {
         <div className="purchase-overview">
           <div className="heading">
             <h3>Purchase Overview</h3>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
             <div className="box">
-              <div className="icon">
+              <div className="icon salesitem-icon">
                 <img src={SalesItemIcon} alt="salesicon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -75,7 +75,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="box">
-              <div className="icon">
+              <div className="icon shopping-icon">
                 <img
                   src={ShoppingIcon}
                   alt="RevenueIcon"
@@ -90,7 +90,7 @@ const Dashboard = () => {
           </div>
           <div className="box-main">
             <div className="box">
-              <div className="icon">
+              <div className="icon sales-icon">
                 <img src={SalesIcon} alt="SalesIcon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -99,7 +99,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="box">
-              <div className="icon">
+              <div className="icon return-icon">
                 <img src={ReturnIcon} alt="ProfitIcon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -114,12 +114,12 @@ const Dashboard = () => {
         <div className="inventory-summary">
           <div className="heading">
             <h3>Inventory Summary</h3>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
             <div className="box">
-              <div className="icon">
-                <img src={SalesIcon} alt="salesicon" className="iconlogo" />
+              <div className="icon sales-icon">
+                <img src={SalesIcon} alt="salesicon" className="iconlogo " />
               </div>
               <div className="inner-content">
                 <h3>Quantity in Hand</h3>
@@ -127,7 +127,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="box">
-              <div className="icon">
+              <div className="icon rececived-icon">
                 <img
                   src={ReceivedIcon}
                   alt="receivedIcon"
@@ -144,7 +144,7 @@ const Dashboard = () => {
         <div className="product-details">
           <div className="heading">
             <h3>Product Details</h3>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
             <div className="box">
@@ -170,11 +170,11 @@ const Dashboard = () => {
         <div className="number-of-user">
           <div className="heading">
             <h3>No of Users</h3>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
             <div className="box">
-              <div className="icon">
+              <div className="icon sales-icon">
                 <img src={SalesIcon} alt="salesicon" className="iconlogo" />
               </div>
               <div className="inner-content">
@@ -183,11 +183,11 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="box">
-              <div className="icon">
+              <div className="icon received-icon">
                 <img
                   src={ReceivedIcon}
                   alt="receivedIcon"
-                  className="iconlogo"
+                  className="iconlogo "
                 />
               </div>
               <div className="inner-content">

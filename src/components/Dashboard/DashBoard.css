@@ -6,7 +6,7 @@
     gap: 10px;
   }
   .sales-overview {
-    background-color: #f8f4ff;
+    background-color: #ffff;
     border-radius: 15px;
     padding: 30px;
   }
@@ -28,17 +28,40 @@
     font-family: monospace;
   }
   .purchase-overview {
-    background-color: #f8f4ff;
+    background-color: #ffff;
     border-radius: 15px;
     padding: 30px;
   }
   .iconlogo {
     height: 30px;
+    /* background-color: #e1f5fe; */
   }
   .icon {
-    background: #fffafa;
+    background: #ffff;
     padding: 10px;
     border-radius: 100%;
+  }
+  /* icon color code */
+  .sales-icon{
+    background: rgba(225,245,254,255);
+  }
+  .received-icon{
+     background: rgba(224,244,233,255);
+  }
+  .profit-icon{
+     background: rgba(230,242,242,255);
+  }
+  .revenue-icon{
+    background: rgba(255,244,222,255);
+  }
+  .salesitem-icon{
+     background: rgba(246,234,254,255);
+  }
+  .return-icon{
+    background: rgba(248,237,243,255);
+  }
+  .shopping-icon{
+    background: rgba(252,233,235,255);
   }
   .details {
     margin: 10px;
@@ -48,7 +71,7 @@
     gap: 10px;
   }
   .inventory-summary {
-    background-color: #f8f4ff;
+    background-color: #ffff;
     border-radius: 15px;
     padding: 30px;
   }
@@ -65,7 +88,7 @@
     gap: 5px;
   }
   .product-details {
-    background-color: #f8f4ff;
+    background-color: #ffff;
     border-radius: 15px;
     padding: 30px;
   }
@@ -83,7 +106,7 @@
     justify-content: space-between;
   }
   .number-of-user {
-    background-color: #f8f4ff;
+    background-color: #ffff;
     border-radius: 15px;
     padding: 30px;
   }
@@ -100,7 +123,7 @@
     /* text-align: center; */
   }
   .Sales-and-purchase-statistics {
-    background-color: #f8f4ff;
+    background-color: #ffff;
     border-radius: 15px;
         padding: 20px;
 

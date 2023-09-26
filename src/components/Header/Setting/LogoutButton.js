@@ -6,6 +6,7 @@ import { Button } from '@mui/material';
 function LogoutButton() {
     const navigate = useNavigate();
   const navigateToLogin = () => {
+    localStorage.removeItem('token');
     navigate("/login");
   };
   return (

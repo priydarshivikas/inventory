@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,43 +13,39 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
-import { database } from "./FireBase/FirebaseConfig";
-import {  sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
 import AuthContext from "../Contexts/AuthContexts";
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const [userInfo, setUserInfo] = useState({email: '', password: '' });
-  const { setUserInfo : handleUserInfo} = useContext(AuthContext);
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+
+  const { setUserInfo: handleUserInfo } = useContext(AuthContext);
 
   const navigate = useNavigate();
-   
-     const handleSubmit = (event) =>{
-        event.preventDefault();
-        signInWithEmailAndPassword(database, userInfo.email, userInfo.password)
-        .then(userInformation =>{
-            handleUserInfo(userInformation)
-            navigate('/');
-        })
-        .catch(error =>{
-            console.log(error.code,error.message);
-            handleUserInfo({})
-        })
-     }
-      
-     const handlePassword =()=>{
-        sendPasswordResetEmail(database,userInfo.email)
-        .then(()=>{
-            alert("Password send successfully on your mail....");
-        }).catch(error=>{
-            console.log(error.code,error.message);
-        })
 
-     }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+      const email=e.target.email.value;
+      const password=e.target.password.value;
+    axios
+      .post("https://reqres.in/api/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        localStorage.setItem("token", response.data.token);
+        handleUserInfo({
+            token :response.data.token,
+        })
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -65,11 +64,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box
-            component="form"
-            onSubmit={(event) => handleSubmit(event)}
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -77,9 +72,8 @@ export default function SignIn() {
               id="email"
               label="Email Address"
               name="email"
-              value={userInfo.email}
-              onChange={(event)=>{setUserInfo({...userInfo,email:event.target.value})}}
-
+              // value={email}
+              // onChange={(event) => setEmail(event.target.value)}
               autoComplete="email"
               autoFocus
             />
@@ -88,8 +82,8 @@ export default function SignIn() {
               required
               fullWidth
               name="password"
-              value={userInfo.password}
-              onChange={(event)=>{setUserInfo({...userInfo,password:event.target.value})}}
+              // value={password}
+              // onChange={(event) => setPassword(event.target.value)}
               label="Password"
               type="password"
               id="password"
@@ -109,7 +103,12 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link onClick={handlePassword}  variant="body2">
+                <Link
+                  to="#"
+                  variant="body2"
+                  onClick={() => {
+                  }}
+                >
                   Forgot password?
                 </Link>
               </Grid>
