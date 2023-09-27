@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "firstName": "Abb",
-      "lastName": "BB",
-      "email": "HJG",
-      "phone": "BNBN",
-      "address": "JKKHKJ",
-      "id": 13
-    },
-    {
       "firstName": "gautam",
       "lastName": "lk;l",
       "email": "kl;k",
@@ -17,12 +9,20 @@
       "id": 15
     },
     {
-      "firstName": "vikas",
-      "lastName": "Gautam",
+      "firstName": "Mohit",
+      "lastName": "kumar",
       "email": "eve.holt@reqres.in",
-      "phone": "9170709905",
-      "address": "SGFS",
-      "id": 16
+      "phone": "6306451634",
+      "address": "Raniganj kaithola",
+      "id": 17
+    },
+    {
+      "firstName": "Hasmit",
+      "lastName": "jha",
+      "email": "hasmit@gmail.com",
+      "phone": "6306451634",
+      "address": "Raniganj kaithola",
+      "id": 19
     }
   ]
 }

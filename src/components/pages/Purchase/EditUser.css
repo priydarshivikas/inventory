@@ -1,57 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"); */
 
-.form{
+.form-wrapper {
   width: 81vw;
+  height: 82vh;
   padding: 1rem;
   border-radius: 12px;
-  background-color: white;
-  margin: 12px;
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+}
+.form-group {
+    display: flex;
+    column-gap: 6rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: 75vh;
+    padding-bottom: 20px;
+    border-radius: 17px;
+    margin-top: 31px;
+    background: #ffff;
+    border: 1px solid rgba(0, 0, 0, -2.5)
+}
+.form-group h1 {
+  margin-right: 6rem;
 }
 
-.form-control {
+.form-input {
   margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
-  
 }
 
-.form-control input,
-.form-control label {
+.form-input input,
+.form-input label {
   display: block;
 }
 
-.form-control label {
-  font-weight: bold;
+.form-input label {
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.form-control input,
-.form-control select {
+.form-input input,
+.form-input select {
   font: inherit;
   padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 20rem;
+  /* border-radius: 3px; */
+  /* border: 1px solid #d5d4d4; */
+  width: 29rem;
   max-width: 100%;
 }
 
-.form-control input:focus {
-  outline: none;
-  border-color: #240370;
-  background-color: #e0d4fd;
-}
+.form-input input:focus {
+  /* outline: none; */
+  outline-width: 1px;
 
-.control-group {
-  display: flex;
-  column-gap: 6rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: 400px;
-  border-radius: 24px;
-  background: #778897;
-  background: #fffbef;
+  /* background-color: #e0d4fd; */
 }
 
 button {
@@ -70,24 +76,10 @@ button:active {
   border-color: #33059e;
 }
 
-.form-actions {
-  text-align: left;
+.form-button {
+  margin-left: 50px;
 }
 
-.form-actions button {
-  margin-left: 1rem;
-}
-
-.invalid input {
-  border: 1px solid #b40e0e;
-  background-color: #fddddd;
-}
-
-.invalid input:focus {
-  border-color: #ff8800;
-  background-color: #fbe8d2;
-}
-
-.error-text {
-  color: #b40e0e;
+.form-button button {
+  margin-left: 12rem;
 }

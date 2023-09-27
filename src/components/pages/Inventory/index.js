@@ -3,7 +3,7 @@ import "./indexInventory.css";
 import Example from "./BasicTable/BasicTable";
 function MyInventory() {
   return (
-    <div className="container">
+    <div className="container-inventory">
      <Example/>
     </div>
   );

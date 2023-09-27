@@ -19,8 +19,7 @@ const EditUser = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  const isEditing = !!id; // Determine if we're in edit mode based on the presence of 'id'
-
+  const isEditing = !!id;
   useEffect(() => {
     if (isEditing) {
       loadUser();
@@ -70,20 +69,23 @@ const EditUser = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <form className="form" onSubmit={onSubmit}>
-          <h1>{isEditing ? "Edit" : "Add"} Customer Details</h1>
-          <div className="control-group">
-            <div className="form-control">
+        <form className="form-wrapper" onSubmit={onSubmit}>
+          <div className="form-group">
+            <h1>{isEditing ? "Edit" : "Add"} Customer Details</h1>
+            <div className="form-input">
               <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
                 value={firstName}
-                onChange={(e) => setUser({ ...user, firstName: e.target.value })}
+                required=""
+                onChange={(e) =>
+                  setUser({ ...user, firstName: e.target.value })
+                }
               />
             </div>
-            <div className="form-control">
+            <div className="form-input">
               <label htmlFor="lastName">Last Name</label>
               <input
                 type="text"
@@ -93,7 +95,7 @@ const EditUser = () => {
                 onChange={(e) => setUser({ ...user, lastName: e.target.value })}
               />
             </div>
-            <div className="form-control">
+            <div className="form-input">
               <label htmlFor="phone">Phone Number</label>
               <input
                 type="text"
@@ -103,7 +105,7 @@ const EditUser = () => {
                 onChange={(e) => setUser({ ...user, phone: e.target.value })}
               />
             </div>
-            <div className="form-control">
+            <div className="form-input">
               <label htmlFor="email">E-Mail Address</label>
               <input
                 type="text"
@@ -113,9 +115,11 @@ const EditUser = () => {
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
             </div>
-            <div className="form-control">
+            <div className="form-input">
               <label htmlFor="address">Address</label>
-              <input
+              <textarea
+              rows={5}
+              cols={58}
                 type="text"
                 id="address"
                 name="address"
@@ -123,27 +127,29 @@ const EditUser = () => {
                 onChange={(e) => setUser({ ...user, address: e.target.value })}
               />
             </div>
-          </div>
-          <div className="form-actions">
-            <button type="submit">{isEditing ? "Update" : "Add"}</button>
-            {isEditing && (
+            <div className="form-button">
+              <button type="submit">{isEditing ? "Update" : "Add"}</button>
+              {isEditing && (
+                <Button
+                  type="button"
+                  variant="contained"
+                  name="delete"
+                  onClick={onDelete}
+                  style={{ marginLeft: "10px" }}
+                >
+                  Delete
+                </Button>
+              )}
               <Button
                 type="button"
                 variant="contained"
-                onClick={onDelete}
+                name="goback"
+                onClick={() => navigate("/PurchaseTable")}
                 style={{ marginLeft: "10px" }}
               >
-                Delete
+                Go Back
               </Button>
-            )}
-            <Button
-              type="button"
-              variant="contained"
-              onClick={() => navigate("/PurchaseTable")}
-              style={{ marginLeft: "10px" }}
-            >
-              Go Back
-            </Button>
+            </div>
           </div>
         </form>
       )}

@@ -17,11 +17,12 @@ import Notifications from "./components/Header/Notifications/Notifications";
 import Wrapper from "./components/Wrapper/Wrapper";
 import AuthContext from "./components/Contexts/AuthContexts";
 import ErroPage from "./components/ErrorPage/ErroPage";
-// import AddUserFrom from './components/pages/Purchase/AddUserForm';
 import EditUser from "./components/pages/Purchase/EditUser";
 
 function App() {
-  const [userInfo, setUserInfo] = useState({token: localStorage.getItem("token")});
+  const [userInfo, setUserInfo] = useState({
+    token: localStorage.getItem("token"),
+  });
 
   return (
     <AuthContext.Provider
@@ -36,9 +37,22 @@ function App() {
         <Routes>
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/customer-form" element={ <Wrapper><EditUser/></Wrapper>}/>
-          <Route path="/customer-form/edit/:id" element={
-           <Wrapper><EditUser/></Wrapper>}/>
+          <Route
+            path="/customer-form"
+            element={
+              <Wrapper>
+                <EditUser />
+              </Wrapper>
+            }
+          />
+          <Route
+            path="/customer-form/edit/:id"
+            element={
+              <Wrapper>
+                <EditUser />
+              </Wrapper>
+            }
+          />
           <Route
             path="/"
             element={
@@ -91,7 +105,7 @@ function App() {
             path="/purchaseTable"
             element={
               <Wrapper>
-                <PurchaseTable/>
+                <PurchaseTable />
               </Wrapper>
             }
           />
@@ -127,11 +141,15 @@ function App() {
               </Wrapper>
             }
           />
-          <Route exact path="*" element={
-            <Wrapper>
-              <ErroPage/>
-            </Wrapper>
-          } />
+          <Route
+            exact
+            path="*"
+            element={
+              <Wrapper>
+                <ErroPage />
+              </Wrapper>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </AuthContext.Provider>
