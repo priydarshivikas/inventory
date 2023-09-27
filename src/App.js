@@ -17,7 +17,7 @@ import Notifications from "./components/Header/Notifications/Notifications";
 import Wrapper from "./components/Wrapper/Wrapper";
 import AuthContext from "./components/Contexts/AuthContexts";
 import ErroPage from "./components/ErrorPage/ErroPage";
-import AddUserFrom from './components/pages/Purchase/AddUserForm';
+// import AddUserFrom from './components/pages/Purchase/AddUserForm';
 import EditUser from "./components/pages/Purchase/EditUser";
 
 function App() {
@@ -36,8 +36,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/customer-form" element={
-           <Wrapper><AddUserFrom/></Wrapper>}/>
+          <Route path="/customer-form" element={ <Wrapper><EditUser/></Wrapper>}/>
           <Route path="/customer-form/edit/:id" element={
            <Wrapper><EditUser/></Wrapper>}/>
           <Route
@@ -92,7 +91,6 @@ function App() {
             path="/purchaseTable"
             element={
               <Wrapper>
-                {/* <MyPurchase /> */}
                 <PurchaseTable/>
               </Wrapper>
             }
