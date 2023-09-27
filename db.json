@@ -1,22 +1,6 @@
 {
   "users": [
     {
-      "firstName": "vikas ",
-      "lastName": "Gautam",
-      "email": "Priydar",
-      "phone": "9134389489",
-      "address": "adfaf",
-      "id": 8
-    },
-    {
-      "firstName": "vikas",
-      "lastName": "gautam",
-      "email": "eve.holt@reqres.in",
-      "phone": "9170709905",
-      "address": "raniganj ",
-      "id": 9
-    },
-    {
       "firstName": "Mohit",
       "lastName": "Gautam ",
       "email": "eve.holt@reqres.in",

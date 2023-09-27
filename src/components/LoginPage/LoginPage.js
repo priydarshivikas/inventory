@@ -12,7 +12,10 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { database } from "./FireBase/FirebaseConfig";
-import {  sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import AuthContext from "../Contexts/AuthContexts";
@@ -20,33 +23,34 @@ import AuthContext from "../Contexts/AuthContexts";
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const [userInfo, setUserInfo] = useState({email: '', password: '' });
-  const { setUserInfo : handleUserInfo} = useContext(AuthContext);
+  const [userInfo, setUserInfo] = useState({ email: "", password: "" });
+  const { setUserInfo: handleUserInfo } = useContext(AuthContext);
 
   const navigate = useNavigate();
-   
-     const handleSubmit = (event) =>{
-        event.preventDefault();
-        signInWithEmailAndPassword(database, userInfo.email, userInfo.password)
-        .then(userInformation =>{
-            handleUserInfo(userInformation)
-            navigate('/');
-        })
-        .catch(error =>{
-            console.log(error.code,error.message);
-            handleUserInfo({})
-        })
-     }
-      
-     const handlePassword =()=>{
-        sendPasswordResetEmail(database,userInfo.email)
-        .then(()=>{
-            alert("Password send successfully on your mail....");
-        }).catch(error=>{
-            console.log(error.code,error.message);
-        })
 
-     }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(database, userInfo.email, userInfo.password)
+      .then((userInformation) => {
+        handleUserInfo(userInformation);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.code, error.message);
+        handleUserInfo({});
+      });
+  };
+
+  const handlePassword = () => {
+    sendPasswordResetEmail(database, userInfo.email)
+      .then(() => {
+        alert("Password send successfully on your mail....");
+      })
+      .catch((error) => {
+        console.log(error.code, error.message);
+      });
+  };
+  
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -78,8 +82,9 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               value={userInfo.email}
-              onChange={(event)=>{setUserInfo({...userInfo,email:event.target.value})}}
-
+              onChange={(event) => {
+                setUserInfo({ ...userInfo, email: event.target.value });
+              }}
               autoComplete="email"
               autoFocus
             />
@@ -89,7 +94,9 @@ export default function SignIn() {
               fullWidth
               name="password"
               value={userInfo.password}
-              onChange={(event)=>{setUserInfo({...userInfo,password:event.target.value})}}
+              onChange={(event) => {
+                setUserInfo({ ...userInfo, password: event.target.value });
+              }}
               label="Password"
               type="password"
               id="password"
@@ -109,7 +116,7 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link onClick={handlePassword}  variant="body2">
+                <Link onClick={handlePassword} variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
