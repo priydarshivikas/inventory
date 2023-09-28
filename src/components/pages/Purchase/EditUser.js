@@ -41,6 +41,20 @@ const EditUser = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    // const validationErrors ={}
+    // if(!user.firstName.trim()){
+    //    validationErrors.firstName="FirstName is required."
+    // }
+    // if(!user.lastName.trim()){
+    //   validationErrors.lastName="LastName is required."
+    // }
+    // if(!user.phone.trim()){
+    //   validationErrors.phone="Phone is required."
+    // }
+    // if(!user.address.trim()){
+    //   validationErrors.address="Address is required."
+    // }
+    // else if()
     try {
       if (isEditing) {
         await axios.put(`http://localhost:3001/users/${id}`, user);

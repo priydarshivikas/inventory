@@ -16,7 +16,7 @@ const xLabels = [
 export default function SimpleLineChart() {
   return (
     <LineChart
-      width={950}
+      width={1150}
       height={350}
       series={[
         { data: pData, label: 'pv' },
