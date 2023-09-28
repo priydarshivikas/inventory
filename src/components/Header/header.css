@@ -13,6 +13,9 @@
   width: 210px;
   top: 7px;
 }
+.company-logo a{
+  color: #384751;
+}
 .companylogo {
   width: 45px;
   margin-top: 25px;

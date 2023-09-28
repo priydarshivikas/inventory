@@ -8,10 +8,28 @@ import ReturnIcon from "../img/return.png";
 import ShoppingIcon from "../img/shopping.png";
 import ReceivedIcon from "../img/received.png";
 import SimpleLineChart from "./Chart";
+import dashboardIcon from './../Image/dashboard.png';
 
 const Dashboard = () => {
   return (
     <div>
+      <div className="dashboard-header">
+       <div className="dashboard-header-left">
+        <img src={dashboardIcon} alt="dashboardIcon" className="dashboardIcon"/>
+        <span>DashBoard</span>
+       </div>
+       <div className="dashboard-header-right">
+        <div className="dashboard-right-container">
+        <button>Month to date</button> 
+        </div>
+        <div className="dashboard-right-container">
+        <button>Year to date</button> 
+        </div>
+        <div className="dashboard-right-container">
+        <button>Export</button> 
+        </div>
+       </div>
+      </div>
       <div className="overview">
         <div className="sales-overview">
           <div className="heading">
@@ -117,7 +135,7 @@ const Dashboard = () => {
             <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
-            <div className="box">
+            <div className="box inventory-box">
               <div className="icon sales-icon">
                 <img src={SalesIcon} alt="salesicon" className="iconlogo " />
               </div>
@@ -126,7 +144,7 @@ const Dashboard = () => {
                 <span>214</span>
               </div>
             </div>
-            <div className="box">
+            <div className="box inventory-box">
               <div className="icon rececived-icon">
                 <img
                   src={ReceivedIcon}
@@ -173,7 +191,7 @@ const Dashboard = () => {
             <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
           <div className="box-main">
-            <div className="box">
+            <div className="box inventory-box">
               <div className="icon sales-icon">
                 <img src={SalesIcon} alt="salesicon" className="iconlogo" />
               </div>
@@ -182,7 +200,7 @@ const Dashboard = () => {
                 <span>214</span>
               </div>
             </div>
-            <div className="box">
+            <div className="box inventory-box">
               <div className="icon received-icon">
                 <img
                   src={ReceivedIcon}
