@@ -4,6 +4,10 @@
   background: white;
   align-items: center;
   height: 60px;
+  width: 85vw;
+  top: 92px;
+  position: fixed;
+  z-index: 5;
 }
 .dashboardIcon {
   width: 32px;
@@ -48,7 +52,7 @@ button:active {
   margin: 10px;
 }
 .overview {
-  margin: 20px;
+  margin: 80px 20px 20px 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;

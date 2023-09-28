@@ -1,6 +1,7 @@
 .content-wrapper {
-  background-color: #f7f8fa;
+  background: #f7f8fa;
   width: 85vw;
+  height: 80vw;
   position: sticky;
   margin-top: 91px;
   float: right;
