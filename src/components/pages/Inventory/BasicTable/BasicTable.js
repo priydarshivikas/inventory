@@ -21,7 +21,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TablePagination from "@mui/material/TablePagination";
-import "./InventoryTable.css"
+import "./InventoryTable.css";
 
 const BasicTable = () => {
   const [users, setUsers] = useState([]);
@@ -82,7 +82,9 @@ const BasicTable = () => {
     if (selectedValue === "") {
       setFilteredUsers(users);
     } else {
-      const filteredData = users.filter((user) => user.gender === selectedValue);
+      const filteredData = users.filter(
+        (user) => user.gender === selectedValue
+      );
       setFilteredUsers(filteredData);
     }
   };
@@ -111,29 +113,28 @@ const BasicTable = () => {
             <p>Inventory Customer Records</p>
           </div>
           <div className="inventory-table-headerContent">
-          <FormControl style={{ width: "100px", height: "50px" }}>
-            <InputLabel>Filter</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={selectedGender}
-              label="Gender"
-              onChange={handleChange}
+            <FormControl style={{ width: "100px", height: "50px" }}>
+              <InputLabel>Filter</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={selectedGender}
+                label="Gender"
+                onChange={handleChange}
+              >
+                <MenuItem value="">All</MenuItem>
+                <MenuItem value="male">Male</MenuItem>
+                <MenuItem value="female">Female</MenuItem>
+              </Select>
+            </FormControl>
+            <Button
+              sx={{ width: "100px", height: "53px" }}
+              variant="contained"
+              onClick={handleOpenForm}
             >
-              <MenuItem value="">All</MenuItem>
-              <MenuItem value="male">Male</MenuItem>
-              <MenuItem value="female">Female</MenuItem>
-            </Select>
-          </FormControl>
-          <Button
-            sx={{ width: "100px", height: "53px" }}
-            variant="contained"
-            onClick={handleOpenForm}
-          >
-            + Add
-          </Button>
+              + Add
+            </Button>
           </div>
-          
         </Box>
         <Dialog open={isFormOpen} onClose={handleCloseForm}>
           <form onSubmit={formSubmission}>
@@ -144,6 +145,7 @@ const BasicTable = () => {
                 value={formData.name}
                 onChange={formhandleChange}
                 label="Name"
+                sx={{ m: 0.5 }}
                 fullWidth
               />
               <TextField
@@ -151,6 +153,7 @@ const BasicTable = () => {
                 value={formData.gender}
                 onChange={formhandleChange}
                 label="Gender"
+                sx={{ m: 0.5 }}
                 fullWidth
               />
               <TextField
@@ -158,6 +161,7 @@ const BasicTable = () => {
                 value={formData.phone}
                 onChange={formhandleChange}
                 label="Phone"
+                sx={{ m: 0.5 }}
                 fullWidth
               />
               <TextField
@@ -165,6 +169,7 @@ const BasicTable = () => {
                 value={formData.email}
                 onChange={formhandleChange}
                 label="Email"
+                sx={{ m: 0.5 }}
                 fullWidth
               />
               <TextField
@@ -172,6 +177,7 @@ const BasicTable = () => {
                 value={formData.username}
                 onChange={formhandleChange}
                 label="User Name"
+                sx={{ m: 0.5 }}
                 fullWidth
               />
             </DialogContent>
@@ -196,15 +202,17 @@ const BasicTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredUsers.slice(pg * rpg, pg * rpg + rpg).map((user ,index) => (
-              <TableRow key={index}>
-                <TableCell>{user.firstName}</TableCell>
-                <TableCell>{user.gender}</TableCell>
-                <TableCell>{user.email}</TableCell>
-                <TableCell>{user.phone}</TableCell>
-                <TableCell>{user.username}</TableCell>
-              </TableRow>
-            ))}
+            {filteredUsers
+              .slice(pg * rpg, pg * rpg + rpg)
+              .map((user, index) => (
+                <TableRow key={index}>
+                  <TableCell>{user.firstName}</TableCell>
+                  <TableCell>{user.gender}</TableCell>
+                  <TableCell>{user.email}</TableCell>
+                  <TableCell>{user.phone}</TableCell>
+                  <TableCell>{user.username}</TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>

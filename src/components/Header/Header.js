@@ -15,9 +15,13 @@ const Header = () => {
            <h1>INVENTORY</h1>
         </Link>
       </div>
-       <div className="search-container">
+      <div className="header-container-wrapper">
+      {/* <div className="header-left"> */}
+      <div className="search-container">
         <input className="input-grey-rounded" type="text" placeholder="Search Anything"></input>
       </div>
+      {/* </div> */}
+      {/* <div className="header-right"> */}
       <div className="flex-profile">
         <div>
           <Link to="/notifications">
@@ -33,6 +37,9 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      </div>
+      {/* </div> */}
+      
     </div>
   );
 };

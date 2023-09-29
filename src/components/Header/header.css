@@ -1,16 +1,26 @@
 .header-container {
   display: flex;
   background-color: #ffff;
-  float: left;
-  height: 90px;
+  height: 80px;
   width: 100%;
   position: fixed;
-  border-bottom: 1px solid rgb(34, 123, 7);
-  z-index: 1;
+  border-bottom: 1px solid rgb(34, 123, 7 ,0.1);
+  z-index: 1
+}
+.header-container-wrapper{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 85%;
+  height: 80px;
+}
+.search-container{
+  width: 360px;
+  height: 80px;
 }
 .company-logo {
-  height: 67px;
-  width: 210px;
+  height: 80px;
+  width: 15%;
   top: 7px;
 }
 .company-logo a{
@@ -18,7 +28,7 @@
 }
 .companylogo {
   width: 45px;
-  margin-top: 25px;
+  margin-top: 12px;
   margin-left: 10px;
   padding: 5px;
 }
@@ -31,10 +41,6 @@
   left: 62px;
   bottom: 61px;
 }
-/* .search-container{
-  background-color: #838D99;
-} */
-
 .input-grey-rounded {
   font-size: 16px;
   line-height: 1.5;
@@ -58,21 +64,18 @@
   background-color: #fff;
   border: 1px solid #84a2fa;
 }
-.header-container input {
+.header-container-wrapper input {
   height: 27px;
   width: 277px;
   border-radius: 35px;
-  margin: 29px 0px 0px 14px;
+  margin: 20px ;
 }
 .flex-profile {
   display: flex;
-  position: absolute;
-  justify-content: space-between;
-  padding: 5px;
-  right: 15px;
+  width: 250px;
+  align-items: center;
   gap: 12px;
 }
 .profileIcon {
   width: 25px;
-  margin-top: 30px;
 }

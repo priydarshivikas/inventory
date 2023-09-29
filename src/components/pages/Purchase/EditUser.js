@@ -13,6 +13,7 @@ const EditUser = () => {
     phone: "",
     address: "",
   });
+  const [errors, setErrors] = useState({});
 
   const { firstName, lastName, email, phone, address } = user;
 
@@ -41,31 +42,45 @@ const EditUser = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // const validationErrors ={}
-    // if(!user.firstName.trim()){
-    //    validationErrors.firstName="FirstName is required."
-    // }
-    // if(!user.lastName.trim()){
-    //   validationErrors.lastName="LastName is required."
-    // }
-    // if(!user.phone.trim()){
-    //   validationErrors.phone="Phone is required."
-    // }
-    // if(!user.address.trim()){
-    //   validationErrors.address="Address is required."
-    // }
-    // else if()
-    try {
-      if (isEditing) {
-        await axios.put(`http://localhost:3001/users/${id}`, user);
-      } else {
-        await axios.post("http://localhost:3001/users/", user);
+    const validationErrors = {};
+    if (!user.firstName.trim()) {
+      validationErrors.firstName = "First Name is required";
+    }
+    if (!user.lastName.trim()) {
+      validationErrors.lastName = "Last Name is required";
+    }
+    if (!user.phone.trim()) {
+      validationErrors.phone = "Phone Number is required";
+    } else if (!user.phone.match("[0-9]{10}")) {
+      validationErrors.phone = "Enter a valid mobile number";
+    }
+    if (!user.address.trim()) {
+      validationErrors.address = "Address is required";
+    }
+    if (!user.email.trim()) {
+      validationErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(user.email)) {
+      validationErrors.email = "Email is not valid.";
+    }
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length === 0) {
+      try {
+        if (isEditing) {
+          await axios.put(`http://localhost:3001/users/${id}`, user);
+        } else {
+          await axios.post("http://localhost:3001/users/", user);
+        }
+        alert(`Form Submitted Successfully`);
+        navigate("/purchaseTable");
+      } catch (error) {
+        console.error(
+          `Error ${isEditing ? "updating" : "adding"} user:`,
+          error
+        );
       }
-      navigate("/purchaseTable");
-    } catch (error) {
-      console.error(`Error ${isEditing ? "updating" : "adding"} user:`, error);
     }
   };
+
   return (
     <>
       {isLoading ? (
@@ -82,11 +97,13 @@ const EditUser = () => {
                 name="firstName"
                 placeholder="Enter your firstname"
                 value={firstName}
-                required
                 onChange={(e) =>
                   setUser({ ...user, firstName: e.target.value })
                 }
               />
+              {errors.firstName && (
+                <span style={{ color: "red" }}>{errors.firstName}</span>
+              )}
             </div>
             <div className="form-input">
               <label htmlFor="lastName">Last Name</label>
@@ -94,11 +111,13 @@ const EditUser = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
-                required
                 placeholder="Enter your lastname"
                 value={lastName}
                 onChange={(e) => setUser({ ...user, lastName: e.target.value })}
               />
+              {errors.lastName && (
+                <span style={{ color: "red" }}>{errors.lastName}</span>
+              )}
             </div>
             <div className="form-input">
               <label htmlFor="phone">Phone Number</label>
@@ -106,23 +125,27 @@ const EditUser = () => {
                 type="text"
                 id="phone"
                 name="phone"
-                required
                 placeholder="Enter your phone number"
                 value={phone}
                 onChange={(e) => setUser({ ...user, phone: e.target.value })}
               />
+              {errors.phone && (
+                <span style={{ color: "red" }}>{errors.phone}</span>
+              )}
             </div>
             <div className="form-input">
               <label htmlFor="email">E-Mail Address</label>
               <input
                 type="text"
-                required
                 id="email"
                 name="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
+              {errors.email && (
+                <span style={{ color: "red" }}>{errors.email}</span>
+              )}
             </div>
             <div className="form-input">
               <label htmlFor="address">Address</label>
@@ -133,12 +156,15 @@ const EditUser = () => {
                 id="address"
                 name="address"
                 placeholder="Enter your address"
-                required
-                resize="none"
                 value={address}
                 onChange={(e) => setUser({ ...user, address: e.target.value })}
               />
             </div>
+            {errors.address && (
+              <div style={{ color: "red", marginTop:"3px" ,marginRight:"340px" }}>
+                {errors.address}
+              </div>
+            )}
             <div className="form-button">
               <button type="submit">{isEditing ? "Update" : "Add"}</button>
               <button
