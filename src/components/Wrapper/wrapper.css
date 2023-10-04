@@ -1,9 +1,9 @@
 .content-wrapper {
-  background-color: #fffafa;
-  width: 80vw;
+  background: #f7f8fa;
+  width: 85vw;
+  height: 80vw;
   position: sticky;
-  /* height: 88vh; */
-  margin-top: 91px;
+  margin-top: 70px;
   float: right;
   grid-area: 20px;
   overflow: hidden;

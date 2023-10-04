@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "firstName": "Mohit",
+      "lastName": "kumar",
+      "email": "eve.holt@reqres.in",
+      "phone": "6306451634s",
+      "address": "Raniganj kaithola",
+      "id": 17
+    },
+    {
+      "firstName": "Hasmit",
+      "lastName": "jha",
+      "email": "hasmit@gmail.com",
+      "phone": "6306451634",
+      "address": "Raniganj kaithola",
+      "id": 19
+    },
+    {
+      "firstName": "Shubham ",
+      "lastName": "Singh",
+      "email": "shubhamsingh123@gmail.com",
+      "phone": "7232348974",
+      "address": "Noida sector-15",
+      "id": 20
+    },
+    {
+      "firstName": "Geet",
+      "lastName": "Jindal",
+      "email": "eve.holt@reqres.in",
+      "phone": "9134389489",
+      "address": "New delhi",
+      "id": 21
+    },
+    {
+      "firstName": "Vikas ",
+      "lastName": "Gautam",
+      "email": "vikas@gmail.com",
+      "phone": "6306451634",
+      "address": "Raniganj kaithola",
+      "id": 22
+    },
+    {
+      "firstName": "Sohan",
+      "lastName": "Kumar",
+      "email": "sohankumar123@gmail.com",
+      "phone": "Noida sector 52 ",
+      "address": "Uttar Pradesh",
+      "id": 23
+    },
+    {
+      "firstName": "Dheeraj ",
+      "lastName": "Gupta ",
+      "email": "dheerajgupta123@gmail.com",
+      "phone": "93749834458",
+      "address": "Kanpur",
+      "id": 24
+    },
+    {
+      "firstName": "das",
+      "lastName": "asda",
+      "email": "eve.holtreqres.in",
+      "phone": "923",
+      "address": "wew",
+      "id": 25
+    },
+    {
+      "firstName": "Mohit",
+      "lastName": "Vikas",
+      "email": "eve.holt@reqres.in",
+      "phone": "9170709905",
+      "address": "dadfa",
+      "id": 26
+    },
+    {
+      "firstName": "Vikas",
+      "lastName": "kumar",
+      "email": "eve.holt@reqres.in",
+      "phone": "9170709905",
+      "address": "adsfa",
+      "id": 27
+    },
+    {
+      "firstName": "vikas",
+      "lastName": "Gautam",
+      "email": "eve.holt@reqres.in",
+      "phone": "9170709905",
+      "address": "sfs",
+      "id": 28
+    }
+  ]
+}
