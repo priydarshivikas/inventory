@@ -11,13 +11,17 @@ import Paper from "@mui/material/Paper";
 import "../../pages/Purchase/PurchaseTable.css";
 import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { deleteUser } from "../../Redux/Reducers/usersSlice";
 export default function MyReturn() {
   const users = useSelector((state) => state.users);
-  console.log(users)
+  console.log(users);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const handleDelete = (userIdToDelete) => {
+    dispatch(deleteUser(userIdToDelete));
+  };
   return (
     <Paper style={{ width: "83vw" }} className="purchase-table-container">
       <TableContainer style={{ width: "83vw" }}>
@@ -26,7 +30,10 @@ export default function MyReturn() {
             <p>Total Purchased Items with Customer Details</p>
           </div>
           <div>
-            <Button variant="contained" onClick={() => navigate("/create-user")}>
+            <Button
+              variant="contained"
+              onClick={() => navigate("/create-user")}
+            >
               Add Details
             </Button>
           </div>
@@ -41,7 +48,7 @@ export default function MyReturn() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((user ,index) => (
+            {users.map((user, index) => (
               <TableRow key={index}>
                 <TableCell>{user.id}</TableCell>
                 <TableCell>{user.fullName}</TableCell>
@@ -52,7 +59,7 @@ export default function MyReturn() {
                   >
                     <EditIcon />
                   </IconButton>
-                  <IconButton >
+                  <IconButton onClick={() => handleDelete(user.id)}>
                     <DeleteOutlineIcon />
                   </IconButton>
                 </TableCell>

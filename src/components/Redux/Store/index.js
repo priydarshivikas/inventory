@@ -3,7 +3,7 @@ import  userSilce  from "../Reducers/usersSlice";
 
 const store = configureStore({
     reducer :{
-        users :userSilce
+        users :userSilce,
     },
 });
 export default store;

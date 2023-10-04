@@ -1,68 +1,101 @@
-// import React from "react";
-// import { useState } from "react";
-// import { useNavigate, useParams } from "react-router-dom";
-// import { updateUser } from "../../Redux/Reducers/usersSlice";
-// import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { addUser, updateUser } from "../../Redux/Reducers/usersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "@mui/material";
 
-// export default function AddUser() {
-//   const navigate = useNavigate();
-//   const {id} =useParams();
-//   const users = useSelector((state) => state.users);
-//   const existingUser = users.filter(f => f.id === id);
-//   const [fullName , email ]=existingUser(0);
-//   const [ufullName , setfullName]=useState(fullName);
-//   const [uemail , setemail]=useState(email); 
+export default function AddUser() {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const users = useSelector((state) => state.users);
+  const dispatch = useDispatch();
 
-//   const dispatch = useDispatch();
-//   const onSubmit = (e) => {
-//     e.preventDefault();
-//     dispatch(updateUser({
-//       id:id,
-//       ufullName:fullName,
-//       uemail:email
-//     }))
-//     navigate("/return");
-//   };
-//   return (
-//     <form className="form-wrapper" onSubmit={onSubmit}>
-//       <div className="form-group">
-//         <h1>Customer Return Using Redux</h1>
-//         <div className="form-input">
-//           <label htmlFor="fullName">Full Name</label>
-//           <input
-//             type="text"
-//             id="fullName"
-//             name="fullName"
-//             placeholder="Enter your lastname"
-//             value={ufullName}
-//             onChange={(e) => setfullName({ fullName: e.target.value })}
-//           />
-//         </div>
-//         <div className="form-input"> 
-//           <label htmlFor="email">E-Mail Address</label>
-//           <input
-//             type="text"
-//             id="email"
-//             name="email"
-//             placeholder="Enter your email"
-//             value={uemail}
-//             onChange={(e) => setemail({ email: e.target.value })}
-//           />
-//         </div>
+  const existingUser = users.find((user) => user.id === id);
 
-//         <div className="form-button">
-//           <button type="submit">Add</button>
-//           <button
-//             type="button"
-//             variant="contained"
-//             name="goback"
-//             onClick={() => navigate("/return")}
-//             style={{ marginLeft: "10px" }}
-//           >
-//             Go Back
-//           </button>
-//         </div>
-//       </div>
-//     </form>
-//   );
-// }
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+  });
+
+  useEffect(() => {
+    if (existingUser) {
+      setFormData({
+        fullName: existingUser.fullName,
+        email: existingUser.email,
+      });
+    }
+  }, [existingUser]);
+
+  const { fullName, email } = formData;
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (existingUser) {
+      dispatch(
+        updateUser({
+          id,
+          fullName,
+          email,
+        })
+      );
+    } else {
+      dispatch(
+        addUser({
+          id: String(users.length + 1), // Use a unique ID for the new user
+          fullName,
+          email,
+        })
+      );
+    }
+    setFormData({ fullName: "", email: "" });
+
+    navigate("/return");
+  };
+
+  return (
+    <form className="form-wrapper" onSubmit={onSubmit}>
+      <div className="form-group">
+        <h1>{existingUser ? "Edit User" : "Add User"}</h1>
+        <div className="form-input">
+          <label htmlFor="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            value={fullName}
+            onChange={(e) =>
+              setFormData({ ...formData, fullName: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-input">
+          <label htmlFor="email">E-Mail Address</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+          />
+        </div>
+
+        <div className="form-button">
+          <Button type="submit">{existingUser ? "Update" : "Add"}</Button>
+          <Button
+            type="button"
+            variant="contained"
+            name="goback"
+            onClick={() => navigate("/return")}
+            style={{ marginLeft: "10px" }}
+          >
+            Go Back
+          </Button>
+        </div>
+      </div>
+    </form>
+  );
+}
