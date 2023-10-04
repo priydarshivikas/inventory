@@ -18,6 +18,7 @@ import Wrapper from "./components/Wrapper/Wrapper";
 import AuthContext from "./components/Contexts/AuthContexts";
 import ErroPage from "./components/ErrorPage/ErroPage";
 import EditUser from "./components/pages/Purchase/EditUser";
+import CreateUser from "./components/pages/Return/addUser"
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -42,6 +43,22 @@ function App() {
             element={
               <Wrapper>
                 <EditUser />
+              </Wrapper>
+            }
+          />
+          <Route
+            path="/create-user"
+            element={
+              <Wrapper>
+                <CreateUser/>
+              </Wrapper>
+            }
+          />
+          <Route
+            path="/createuser/:id"
+            element={
+              <Wrapper>
+                <CreateUser/>
               </Wrapper>
             }
           />
