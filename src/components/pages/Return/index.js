@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteUser } from "../../Redux/Reducers/usersSlice";
 export default function MyReturn() {
   const users = useSelector((state) => state.users);
-  console.log(users);
+  // console.log(users);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

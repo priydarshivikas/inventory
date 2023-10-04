@@ -11,7 +11,7 @@ const userSlice = createSlice({
   reducers: {
     addUser: (state, action) => {
       state.push(action.payload);
-      console.log(action);
+      // console.log(action);
     },
     updateUser: (state, action) => {
       const updatedUser = action.payload;
@@ -19,13 +19,15 @@ const userSlice = createSlice({
       if (userIndex !== -1) {
         state[userIndex] = updatedUser;
       }
+      // console.log(action);
     },
     deleteUser: (state, action) => {
       const userIdToDelete = action.payload;
+      // console.log(action);
       return state.filter((user) => user.id !== userIdToDelete);
     },
   },
 });
 export const { addUser, updateUser, deleteUser } = userSlice.actions;
-console.log(userSlice.actions);
+// console.log(userSlice.actions);
 export default userSlice.reducer;
