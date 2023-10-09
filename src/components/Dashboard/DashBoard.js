@@ -30,6 +30,7 @@ const Dashboard = () => {
         </div>
        </div>
       </div>
+      <div className="dashBoard-wrapper">
       <div className="overview">
         <div className="sales-overview">
           <div className="heading">
@@ -221,6 +222,7 @@ const Dashboard = () => {
           <h3>Sales-And-Purchase-Statistics</h3>
           <SimpleLineChart />
         </div>
+      </div>
       </div>
     </div>
   );

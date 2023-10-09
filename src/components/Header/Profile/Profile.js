@@ -75,7 +75,7 @@ function Profile() {
             </Link>
           </li>
           <li>
-            <Link to="Setting">
+            <Link to="/setting">
               Settings
               <SettingsIcon className="userIcon" />
             </Link>
