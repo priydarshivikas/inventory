@@ -1,13 +1,13 @@
 .dashboard-header {
-   display: flex;
-    justify-content: space-between;
-    background: white;
-    align-items: center;
-    height: 53px;
-    width: 85vw;
-    top: 79px;
-    position: fixed;
-    z-index: 5
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  align-items: center;
+  height: 53px;
+  width: 85vw;
+  top: 79px;
+  position: fixed;
+  z-index: 5;
 }
 .dashboardIcon {
   width: 32px;
@@ -195,4 +195,20 @@ button:active {
 .box span {
   font-weight: 900;
   font-size: 20px;
+}
+@media (max-width: 550px) {
+  .overview {
+    display: flex;
+    flex-direction: column;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-left: 15px;
+    gap: 15px;
+  }
+  .dashboard-header {
+    visibility: hidden;
+  }
 }

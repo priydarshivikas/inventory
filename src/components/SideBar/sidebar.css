@@ -48,6 +48,15 @@ a{
     padding: 10px;
     /* background-color: #e1f5fe; */
 }
+@media(max-width:650px){
+   .sidebar{
+       width: 20px;
+   }
+   .sidebar h3{
+     visibility: hidden;
+
+}
+}
 
 
 

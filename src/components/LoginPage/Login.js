@@ -18,8 +18,6 @@ import AuthContext from "../Contexts/AuthContexts";
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
 
   const { setUserInfo: handleUserInfo } = useContext(AuthContext);
 
@@ -36,6 +34,7 @@ export default function SignIn() {
       })
       .then((response) => {
         localStorage.setItem("token", response.data.token);
+        console.log("S")
         handleUserInfo({
             token :response.data.token,
         })
