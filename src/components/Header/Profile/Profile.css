@@ -150,4 +150,43 @@
     /* margin: 20px; */
     margin-right: 5px;
   }
+}/* Original styles for .profile-dropdown */
+
+/* Add your original styles here */
+
+@media (max-width: 550px) {
+  .profile-dropdown {
+    margin: 20px; /* Adjust margin for smaller screens */
+  }
+
+  .profile-dropdown span {
+    width: auto; /* Remove fixed width for span */
+    margin-right: 0; /* Remove margin-right for span */
+  }
+
+  .profile-dropdown img {
+    margin: 5; /* Remove margin for img */
+  }
+
+  .profile-dropdown ul {
+    margin-top: 4px; /* Adjust margin-top for ul */
+  }
+
+  .profile-dropdown ul li a {
+    padding: 0.5rem 1rem; /* Adjust padding for li elements */
+  }
+
+  .header-content-wrapper-input {
+    height: auto; /* Remove fixed height for input */
+    width: 100%; /* Adjust width for input */
+    margin: 10px 0; /* Adjust margin for input */
+  }
+  .company-logo h1{
+    font-weight: 800;
+    font-size: 1.2em;
+    text-decoration: none;
+    position: relative;
+    left: 60px;
+    bottom: 57px;
+  }
 }
