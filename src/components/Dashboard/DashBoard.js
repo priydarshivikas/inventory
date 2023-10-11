@@ -1,5 +1,6 @@
 import React from "react";
-import "./DashBoard.css";
+// import "./DashBoard.css";
+import "./Dashboard2.css"
 import SalesIcon from "../img/cost.png";
 import ProfitIcon from "../img/profit.png";
 import RevenueIcon from "../img/revenue.png";
