@@ -28,8 +28,8 @@ const BasicTable = () => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [selectedGender, setSelectedGender] = useState("");
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [pg, setpg] = React.useState(0);
-  const [rpg, setrpg] = React.useState(9);
+  const [pg, setpg] = useState(0);
+  const [rpg, setrpg] = useState(9);
 
   function handleChangePage(newpage) {
     setpg(newpage);
@@ -104,6 +104,7 @@ const BasicTable = () => {
     setFormData({ name: "", gender: "", phone: "", email: "", username: "" });
     handleCloseForm();
   };
+
 
   return (
     <Paper style={{ width: "83vw" }} className="purchase-table-container">
