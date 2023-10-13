@@ -11,6 +11,6 @@
 @media(max-width:550px){
   .content-wrapper{
     height: 100%;
-    margin-top: 15px;
+    /* margin-top: 75px; */
   }
 }

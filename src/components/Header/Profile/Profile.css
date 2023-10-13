@@ -16,7 +16,7 @@
   position: relative;
   background: #f6f7f9;
   border: 1px solid #d5d9db;
-  margin: 15px;
+  margin: 16px 16px;
   font-weight: bold;
   font-size: 0.9rem;
   border-radius: 50px;
@@ -145,18 +145,14 @@
   }
   .header-content-wrapper-input{
     height: 150px;
-    width: 90px;
+    width: auto;
     border-radius: 35px;
-    /* margin: 20px; */
     margin-right: 5px;
   }
-}/* Original styles for .profile-dropdown */
-
-/* Add your original styles here */
-
+}
 @media (max-width: 550px) {
   .profile-dropdown {
-    margin: 20px; /* Adjust margin for smaller screens */
+    margin: 20px;
   }
 
   .profile-dropdown span {
@@ -183,10 +179,10 @@
   }
   .company-logo h1{
     font-weight: 800;
-    font-size: 1.2em;
+    font-size: 1.3em;
     text-decoration: none;
     position: relative;
-    left: 60px;
-    bottom: 57px;
+    left: 75px;
+    bottom: 55px;
   }
 }

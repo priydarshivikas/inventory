@@ -9,14 +9,6 @@
       "id": 17
     },
     {
-      "firstName": "Hasmit",
-      "lastName": "jha",
-      "email": "hasmit@gmail.com",
-      "phone": "6306451634",
-      "address": "Raniganj kaithola",
-      "id": 19
-    },
-    {
       "firstName": "Shubham ",
       "lastName": "Singh",
       "email": "shubhamsingh123@gmail.com",
@@ -87,6 +79,30 @@
       "phone": "9170709905",
       "address": "sfs",
       "id": 28
+    },
+    {
+      "firstName": "Vikas",
+      "lastName": "Gautam",
+      "email": "vikasgautam@gmail.com",
+      "phone": "9134389489",
+      "address": "Raniganj kaithola",
+      "id": 29
+    },
+    {
+      "firstName": "sdfs",
+      "lastName": "wrtw",
+      "email": "wrtwe@gmail.com",
+      "phone": "9170709905323",
+      "address": "wertwredad",
+      "id": 30
+    },
+    {
+      "firstName": "afasfd",
+      "lastName": "fasfdas",
+      "email": "vikas@gmail.com",
+      "phone": "9134389489",
+      "address": "fasff",
+      "id": 31
     }
   ]
 }

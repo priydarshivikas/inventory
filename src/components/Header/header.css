@@ -35,7 +35,7 @@
 }
 
 .company-logo h1 {
-  font-weight: 800;
+  font-weight: 800 ;
   font-size: 1.5rem;
   text-decoration: none;
   position: relative;
@@ -92,4 +92,37 @@
     width: 85%;
     height: 80px;
   }
+}@media (max-width: 768px) {
+  .company-logo h1 {
+    font-size: 1rem;
+    left: 9px;
+    bottom: 25px;
+  }
+  .companylogo {
+    width: 35px;
+    margin-top: 12px;
+    margin-left: 25px;
+    padding: 9px;
+  }
 }
+
+/* Media query for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+  .company-logo h1 {
+    font-size: 1rem; /* Further adjust the font size for even smaller screens */
+    left: 10px; /* Further adjust the left position for even smaller screens */
+    bottom: 10px; /* Further adjust the bottom position for even smaller screens */
+  }
+  .companylogo {
+    width: 30px;
+    margin-top: 12px;
+    margin-left: 10px;
+    padding: 5px;
+  }
+}
+
+
+
+
+
+
