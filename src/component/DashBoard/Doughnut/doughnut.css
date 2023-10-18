@@ -1,0 +1,14 @@
+h1 { 
+    font-family: helvetica, arial, sans-serif; 
+    text-align:center; 
+    margin-top: 80px;
+  }
+  
+  
+  .viz-portfolio-total-value {
+    font-family: helvetica, arial, sans-serif; 
+    margin: 0 auto;
+    font-size: 10px;
+    width: 450px;
+    height: 300px
+  }
