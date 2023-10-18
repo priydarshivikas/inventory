@@ -1,0 +1,9 @@
+.content-wrapper {
+  margin-top: 3%;
+  top: 20vh;
+  width: 84vw;
+  height: 100vw;
+  position: sticky;
+  float: right;
+  overflow: hidden;
+}
